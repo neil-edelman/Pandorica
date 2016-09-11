@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<scene>
+
+<material name="post">
+	<color r="0.5" g="0.5" b="0.5" a="1"/>
+	<mirror_color r="1" g="0.5" b="0.5" a="1"/>
+	<specular_reflect fval="32"/>
+</material>
+
+<material name="red">
+	<color r="1" g="0" b="0" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="65"/>
+</material>
+
+<material name="cow">
+	<color r="0.3" g="0.3" b="0.4" a="1"/>
+	<mirror_color r="0.5" g="0.5" b="0.5" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="leaves">
+	<color r="0.1" g="1" b="0.3" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="bark">
+	<color r="0.5" g="0.3" b="0.2" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="cement">
+	<color r="0.5" g="0.6" b="0.4" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+</material>
+
+<light name="deathly halo">
+	<color r="0" g="0" b="1"/>
+	<from x="0" y="0" z="0"/>
+	<power fval="2048"/>
+	<type sval="pointlight"/>
+</light>
+
+<light name="sun">
+	<color r="1" g="1" b="1"/>
+	<from x="1" y="0.5" z="-0.5"/>
+	<power fval="0.7"/>
+	<type sval="directional"/>
+</light>
+
+<camera name="cam">
+	<from x="-10" y="30" z="20"/>
+	<to x="0" y="-1" z="0"/>
+	<up x="0" y="1" z="0"/>
+	<fovy angle="55"/>
+	<height ival="600"/>
+	<width ival="800"/>
+</camera>
+
+<node name="tree">
+	<cube min="-0.1 0 -0.1" max="0.1 2 0.1" material="bark"/>
+	<sphere position="0.5 2 0" scale="0.5 0.5 0.5" material="leaves"/>
+	<sphere position="-0.3 2.2 0.1" scale="0.4 0.4 0.4" material="leaves"/>
+	<sphere position="-0.1 1.9 0.6" scale="0.5 0.5 0.5" material="leaves"/>
+	<sphere position="0.1 2.4 -0.4" scale="0.5 0.5 0.5" material="leaves"/>
+	<sphere position="0.8 1.9 -0.1" scale="0.5 0.5 0.5" material="leaves"/>
+	<sphere position="-0.8 1.9 0" scale="0.5 0.5 0.5" material="leaves"/>
+</node>
+
+<node name="root">
+	Ground
+	<ground level="-4" material="leaves"/>
+
+<node name="pandorica" position="0 0 0">
+	Sides Centre
+	<cube min="2 -1 -1" max="3 1 1" material="post"/>
+	<cube min="-3 -1 -1" max="-2 1 1" material="post"/>
+	<cube min="-1 2 -1" max="1 3 1" material="post"/>
+	<cube min="-1 -3 -1" max="1 -2 1" material="post"/>
+	<cube min="-1 -1 2" max="1 1 3" material="post"/>
+	<cube min="-1 -1 -3" max="1 1 -2" material="post"/>
+	In Between the Corners
+	<cube min="-1 2 2" max="1 3 3" material="post"/>
+	<cube min="2 2 -1" max="3 3 1" material="post"/>
+	<cube min="2 -1 2" max="3 1 3" material="post"/>
+
+	<cube min="-1 -3 2" max="1 -2 3" material="post"/>
+	<cube min="-3 2 -1" max="-2 3 1" material="post"/>
+	<cube min="-3 -1 2" max="-2 1 3" material="post"/>
+
+	<cube min="-1 2 -3" max="1 3 -2" material="post"/>
+	<cube min="2 -3 -1" max="3 -2 1" material="post"/>
+	<cube min="2 -1 -3" max="3 1 -2" material="post"/>
+
+	<cube min="-1 -3 -3" max="1 -2 -2" material="post"/>
+	<cube min="-3 -3 -1" max="-2 -2 1" material="post"/>
+	<cube min="-3 -1 -3" max="-2 1 -2" material="post"/>
+	Corners
+	<cube min="2 2 2" max="3 3 3" material="post"/>
+	<cube min="2 2 -3" max="3 3 -2" material="post"/>
+	<cube min="2 -3 2" max="3 -2 3" material="post"/>
+	<cube min="-3 2 2" max="-2 3 3" material="post"/>
+	<cube min="-3 -3 2" max="-2 -2 3" material="post"/>
+	<cube min="2 -3 -3" max="3 -2 -2" material="post"/>
+	<cube min="-3 2 -3" max="-2 3 -2" material="post"/>
+	<cube min="-3 -3 -3" max="-2 -2 -2" material="post"/>
+</node>
+
+	Forest
+	<instance name="tree" position="10 -4 2" roty="20"/>
+	<instance name="tree" position="-9 -4 -5" roty="-20"/>
+	<instance name="tree" position="4 -4 8" roty="60"/>
+	<instance name="tree" position="8 -4 -3" roty="-60"/>
+	<instance name="tree" position="-5 -4 8" roty="0"/>
+	<instance name="tree" position="-6 -4 -5" roty="10"/>
+	<instance name="tree" position="3 -4 5" roty="-40"/>
+	<instance name="tree" position="7 -4 -7" roty="40"/>
+	<instance name="tree" position="-2 -4 -9" roty="15"/>
+	<instance name="tree" position="6 -4 3" roty="75"/>
+	<instance name="tree" position="-3 -4 -5" roty="25"/>
+	<instance name="tree" position="8 -4 1" roty="-30"/>
+	<instance name="tree" position="-1 -4 8" roty="50"/>
+	<instance name="tree" position="7 -4 3" roty="10"/>
+	<instance name="tree" position="-6 -4 2" roty="-10"/>
+	<instance name="tree" position="-7 -4 -1" roty="-100"/>
+	<instance name="tree" position="4 -4 7" roty="110"/>
+	<instance name="tree" position="7 -4 -5" roty="-120"/>
+
+	Cows
+	<mesh file="cow.obj" position="10 -3 20" material="cow"/>
+	<mesh file="cow.obj" position="50 -3 -10" material="cow"/>
+	<mesh file="cow.obj" position="-35 -3 20" material="cow"/>
+	<mesh file="cow.obj" position="10 -3 40" material="cow"/>
+	<mesh file="cow.obj" position="-40 -3 20" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 -60" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 -80" material="cow"/>
+	<mesh file="cow.obj" position="30 -3 -20" material="cow"/>
+	<mesh file="cow.obj" position="30 -3 -50" material="cow"/>
+	<mesh file="cow.obj" position="-40 -3 -20" material="cow"/>
+	<mesh file="cow.obj" position="40 -3 -90" material="cow"/>
+	<mesh file="cow.obj" position="20 -3 40" material="cow"/>
+	<mesh file="cow.obj" position="-50 -3 -30" material="cow"/>
+	<mesh file="cow.obj" position="40 -3 -60" material="cow"/>
+	<mesh file="cow.obj" position="-20 -3 30" material="cow"/>
+	<mesh file="cow.obj" position="40 -3 -80" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 -20" material="cow"/>
+	<mesh file="cow.obj" position="50 -3 -60" material="cow"/>
+	<mesh file="cow.obj" position="30 -3 -70" material="cow"/>
+	<mesh file="cow.obj" position="-50 -3 40" material="cow"/>
+	<mesh file="cow.obj" position="-20 -3 -20" material="cow"/>
+	<mesh file="cow.obj" position="-10 -3 -60" material="cow"/>
+	<mesh file="cow.obj" position="0 -3 -80" material="cow"/>
+	<mesh file="cow.obj" position="40 -3 40" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 40" material="cow"/>
+	<mesh file="cow.obj" position="-50 -3 30" material="cow"/>
+	<mesh file="cow.obj" position="30 -3 -20" material="cow"/>
+	<mesh file="cow.obj" position="20 -3 -50" material="cow"/>
+	<mesh file="cow.obj" position="-20 -3 -50" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 10" material="cow"/>
+	<mesh file="cow.obj" position="30 -3 -50" material="cow"/>
+	<mesh file="cow.obj" position="-40 -3 30" material="cow"/>
+	<mesh file="cow.obj" position="-30 -3 -60" material="cow"/>
+	<mesh file="cow.obj" position="-10 -3 -20" material="cow"/>
+	<mesh file="monkey.obj" position="0 10 0" roty="0" scale="16 16 16" material="red"/>
+</node>
+
+<render output="pandorica.png" camera="cam"/>
+
+</scene>

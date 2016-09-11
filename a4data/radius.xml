@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<scene>
+
+<material name="red">
+	<color r="1" g="0" b="0" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<light name="sun">
+	<color r="1" g="1" b="1"/>
+	<from x="0" y="1" z="0"/>
+	<power fval="0.5"/>
+	<type sval="directionallight"/>
+</light>
+
+<!--<light name="lamp">
+	<color r="1" g="1" b="1"/>
+	<from x="10" y="10" z="0"/>
+	<power fval="1.5"/>
+	<type sval="pointlight"/>
+</light>-->
+
+<camera name="cam">
+	<from x="0" y="0" z="10"/>
+	<to x="0" y="0" z="0"/>
+	<up x="0" y="1" z="0"/>
+	<fovy angle="45"/>
+	<height ival="600"/>
+	<width ival="800"/>
+</camera>
+
+<node name="root">
+	<!--<sphere radius="0.5" position="1 1 0" material="red"/>
+	<sphere radius="0.5" position="-1 1 0" material="red"/>
+	<sphere radius="0.5" position="1 -1 0" material="red"/>
+	<sphere radius="0.5" position="-1 -1 0" material="red"/>
+	<sphere radius="0.5" position="0 0 0" material="red"/>
+	<node name="subtree">
+		<translation v="0 0 -10"/>
+		<sphere position="0 5 0"/>
+		<sphere position="0 3 0"/>
+		<sphere position="0 1 0"/>
+		<sphere position="0 -1 0"/>
+		<sphere position="0 -3 0"/>
+	</node>-->
+	<!--<sphere radius="1" position="-0.3 3 0"/>
+	<sphere radius="1" position="-0.1 1 0"/>
+	<sphere radius="1" position="0.1 -1 0"/>
+	<sphere radius="1" position="0.3 -3 0"/>-->
+	<sphere position="3 0 0" radius="5"/>
+	<sphere/>
+</node>
+
+<render output="radius.png" camera="cam"/>
+
+</scene>

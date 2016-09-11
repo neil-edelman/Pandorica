@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<scene>
+
+<material name="red">
+	<color r="1" g="0" b="0" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="green">
+	<color r="0" g="1" b="0" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="blue">
+	<color r="0" g="0" b="1" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<light name="lamp0">
+	<color r="1" g="1" b="1" a="1"/>
+	<from x="0" y="10" z="0"/>
+	<power fval="0.5"/>
+	<type sval="directionallight"/>
+</light>
+
+<light name="lamp1">
+	<color r="1" g="1" b="1" a="1"/>
+	<from x="10" y="-10" z="0"/>
+	<power fval="0.5"/>
+	<type sval="pointlight"/>
+</light>
+
+<camera name="cam">
+	<from x="0" y="0" z="-10"/>
+	<to x="0" y="0" z="0"/>
+	<up x="0" y="1" z="0"/>
+	<fovy angle="45"/>
+	<height ival="600"/>
+	<width ival="800"/>
+</camera>
+
+<node name="cow">
+	<mesh file="cow.obj" material="red"/>
+</node>
+
+<node name="root">
+	<node name="test">
+	    <translation v="5 0 0"/>	
+	    <rotx angle="23"/>
+	    <scale v="1 3 1"/>
+	    <sphere radius="0.5" position="0 0 0" material="red"/>
+	    <cube size="1"  material="green"/>
+        <node name="foo">
+            <translation v="0 0.5 0"/>
+            <sphere radius="0.5" material="blue"/>
+        </node>
+	</node>
+	<node name="cow2">
+		<instance name="cow" material="blue"/>
+	</node>
+	<node name="cow3">
+        <translation v="1 0 0"/>
+		<instance name="cow"/>
+	</node>
+</node>
+
+<render output="output-scene1.png" camera="cam"/>
+
+</scene>

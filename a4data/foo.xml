@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<scene>
+
+<material name="red">
+	<color r="1" g="0" b="0" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="32"/>
+</material>
+
+<material name="cow">
+	<color r="0.7" g="0.7" b="0.8" a="1"/>
+	<mirror_color r="0.5" g="0.5" b="0.5" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<material name="green">
+	<color r="0.2" g="1" b="0.3" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<light name="amb">
+	<color r="1" g="1" b="1"/>
+	<power fval="0.1"/>
+	<type sval="ambient"/>
+</light>
+
+<light name="sun">
+	<color r="0.9" g="0.3" b="0.3"/>
+	<from x="6" y="1" z="4"/>
+	<power fval="0.5"/>
+	<type sval="directional"/>
+</light>
+
+<camera name="cam">
+	<from x="0" y="1" z="2"/>
+	<to x="0" y="0" z="0"/>
+	<up x="0" y="1" z="0"/>
+	<fovy angle="70"/>
+	<height ival="600"/>
+	<width ival="800"/>
+</camera>
+
+<node name="root">
+	<ground level="-1" material="green"/>
+	<mesh file="cow.obj" roty="0" material="cow"/>
+</node>
+
+<render output="foo.png" camera="cam"/>
+
+</scene>

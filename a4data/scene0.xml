@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<scene>
+
+This file can contain comments anywhere you like.  Only the tags and attributes are used to define the scene.
+You must have at least one camera, a root node, and a render tag.
+
+<material name="red">
+	<color r="0.5" g="0.5" b="0.5" a="1"/>
+	<mirror_color r="1" g="1" b="1" a="1"/>
+	<specular_reflect fval="0"/>
+</material>
+
+<light name="lamp">
+	<color r="1" g="1" b="1" a="1"/>
+	<from x="10" y="10" z="0"/>
+	<power fval="0.5"/>
+	<type sval="pointlight"/>
+</light>
+
+<camera name="cam">
+	<from x="0" y="0" z="-10"/>
+	<to x="0" y="0" z="0"/>
+	<up x="0" y="1" z="0"/>
+	<fov angle="45"/>
+	<height ival="20"/>
+	<width ival="20"/>
+</camera>
+
+<node name="root">
+	<sphere radius="1" material="red"/>
+</node>
+
+You can set up multiple render tags if you like to generate multiple images.  If the render
+tag is missing, then your program will only parse this file and then exit.
+
+<render output="output-scene0.png" camera="cam"/>
+
+</scene>
